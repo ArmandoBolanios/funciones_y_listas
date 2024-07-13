@@ -1,5 +1,5 @@
-let numeroSecreto = generarNumeroSecreto();
-let intentos = 1;
+let numeroSecreto = 0;
+let intentos = 0;
 let listaNumerosSorteados = [];
 let numeroMaximo = 10;
 
@@ -16,10 +16,11 @@ function verificarIntento() {
         asignarTextoElemento('p', `Acertaste el número en ${intentos} ${(intentos === 1) ? 'vez' : 'veces'}`);
         document.getElementById('reiniciar').removeAttribute('disabled');
     } else {
+        //El usuario no acertó
         if (numeroDeUsuario > numeroSecreto) {
-            asignarTextoElemento('p', 'EL numero secreto es menor');
+            asignarTextoElemento('p', 'El numero secreto es menor');
         } else {
-            asignarTextoElemento('p', 'EL numero secreto es mayor');
+            asignarTextoElemento('p', 'El numero secreto es mayor');
         }
         intentos++;
         limpiarCaja();
